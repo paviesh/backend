@@ -50,9 +50,8 @@ app.post('/compare-excel', upload.fields([{ name: 'file1' }, { name: 'file2' }])
 
   for (const excelfileName of sheetNames1) {
     const excelsheet1 = workbook1.Sheets[excelfileName];
-    console.log("excelsheet1", excelsheet1);
     const excelsheet2 = workbook2.Sheets[excelfileName];
-    console.log("excelsheet2", excelsheet2);
+   
     const excelDifference = excelSheetsCompare(excelsheet1, excelsheet2);
     if (excelDifference && excelDifference.length > 0) {
       excelDataDifference.push({
